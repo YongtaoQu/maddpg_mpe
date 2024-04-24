@@ -1,0 +1,18 @@
+num_episodes: 3000
+len_episodes : 25
+buffer_size : 100_000
+hidden_dim : 64
+actor_lr : 1e-2
+critic_lr : 1e-2
+gamma : 0.95
+tau : 1e-2  # soft update coefficient for target network updates
+batch_size : 1024
+update_interval : 100  # number of steps before updating the networks
+evaluate_interval : 100 # number of steps before evaluating the networks
+minimal_size : 4000  # minimum threshold for the replay buffer size before training
+net_arch : "rnn" # use "mlp" or "rnn" for actor and critic network
+
+# four envs provided: 'simple_spread_v3','simple_speaker_listener_v4','simple_adversary_v3','simple_world_comm_v3'
+# register more in utils.REGISTRY_ENV if needed
+env: "simple_world_comm_v3"
+data_save_dir : "results/"
